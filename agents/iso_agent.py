@@ -7,9 +7,9 @@ from utils.config import GOOGLE_API_KEY
 from google.api_core.exceptions import ResourceExhausted
 import time, json, re
 
-# ✅ Configure Gemini model
+# Configure Gemini model
 genai.configure(api_key=GOOGLE_API_KEY)
-model = genai.GenerativeModel("gemini-2.5-flash")  # Fast & quota-efficient
+model = genai.GenerativeModel("gemini-2.5-flash")  
 
 def analyze_iso_from_pdf(pdf_path: str, use_gemini=True) -> dict:
     # Step 1: Load text from PDF
@@ -17,9 +17,9 @@ def analyze_iso_from_pdf(pdf_path: str, use_gemini=True) -> dict:
 
     # Step 2: Fallback to OCR if no text
     if not text.strip():
-        print("⚠️ PDF is empty. Using OCR fallback...")
+        print("PDF is empty. Using OCR fallback...")
         text = load_pdf_text_with_ocr(pdf_path)
-        print("✅ OCR text (first 300 chars):\n", text[:300])
+        print("OCR text (first 300 chars):\n", text[:300])
 
     # Step 3: Extract ISO codes using regex
     iso_codes = extract_iso_codes(text)
@@ -62,7 +62,7 @@ def analyze_iso_from_pdf(pdf_path: str, use_gemini=True) -> dict:
             try:
                 response = model.generate_content(prompt)
             except ResourceExhausted:
-                print("⚠️ Gemini quota exhausted. Retrying in 60s...")
+                print("Gemini quota exhausted. Retrying in 60s...")
                 time.sleep(60)
                 response = model.generate_content(prompt)
 

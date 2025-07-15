@@ -1,4 +1,4 @@
-# 🐍 Python
+# Python
 __pycache__/
 *.py[cod]
 *.pyo
@@ -9,23 +9,23 @@ __pycache__/
 *.db
 *.egg-info/
 
-# 🧪 Virtual Environment
+# Virtual Environment
 venv/
 ENV/
 env/
 .venv/
 
-# 📁 OS/Editor-specific
+# OS/Editor-specific
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
 
-# 🔐 Environment Files
+# Environment Files
 .env
 *.env
 
-# 📄 PDFs and Outputs
+# PDFs and Outputs
 *.pdf
 *.webp
 *.png
@@ -33,7 +33,7 @@ Thumbs.db
 outputs/
 output.json
 
-# 🧠 Model/Cache Files
+# Model/Cache Files
 *.pt
 *.ckpt
 *.bin
@@ -41,20 +41,20 @@ output.json
 pip-wheel-metadata/
 __pypackages__/
 
-# 📦 Build artifacts
+# Build artifacts
 build/
 dist/
 *.egg
 *.manifest
 
-# 🧪 Test Artifacts
+# Test Artifacts
 *.pytest_cache/
 .pytest_cache/
 
-# 🔧 Tesseract / Poppler paths (if dumped by mistake)
+# Tesseract / Poppler paths (if dumped by mistake)
 *.exe
 *.dll
 
-# 🚫 Misc
+# Misc
 *.bak
 *.swp

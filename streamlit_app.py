@@ -3,7 +3,7 @@ import tempfile
 import json
 from agents.iso_agent import analyze_iso_from_pdf
 
-st.title("📄 ISO Document Analyzer (with OCR + Gemini + Serper)")
+st.title("📄 ISO Document Analyzer")
 
 uploaded_file = st.file_uploader("Upload your ISO certificate PDF", type=["pdf"])
 
@@ -18,7 +18,7 @@ if uploaded_file:
     if "result" in result:
         st.warning(result["result"]["status"])
     else:
-        st.success("✅ ISO codes and versioning info extracted.")
+        st.success("ISO codes and versioning info extracted.")
         for code, data in result.items():
             st.markdown(f"### 🔎 `{code}`")
             st.json(data)
